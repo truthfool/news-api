@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="canonical"
+    href="https://getbootstrap.com/docs/5.0/examples/sticky-footer/"
+  />
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+    integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+    crossorigin="anonymous"
+  ></script>
+    <title>News Feed</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a href=""
+            ><img
+              style="margin: 10px"
+              src="https://cdn-icons-png.flaticon.com/512/237/237014.png"
+              width="35"
+              height="35"
+          /></a>
+          <a class="navbar-brand" href="{% url 'home' %}">News Feed</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="{% url 'home' %}"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="{% url 'all_news' %}"
+                  >All News</a
+                >
+              </li>
+              <li>
+                <form action="{% url 'home' %}" method="get">
+                    <label for="featured">Format</label>
+                    <select name="featured">
+                        <option value="Tech Mahindra">Tech Mahindra</option>
+                        <option value="Infosys">Infosys</option>
+                        <option value="Accenture">Accenture</option>
+                        <option value="Wipro">Wipro</option>
+                        <option value="TCS">TCS</option>
+                        <option value="AI">AI</option>
+                    <input type="submit" name="featured" value="Filter" />
+                </form> 
+              </li>
+            </ul>
+            
+  
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+              <input
+                type="search"
+                class="form-control form-control-dark"
+                placeholder="Search..."
+                aria-label="Search"
+              />
+            </form>
+            
+          </div>
+        </div>
+      </nav>
+
+      {% block content %}
+      {% endblock %}
+      
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for news in news_list %}
+    <div class="container card" style="width: 32rem; margin-top: 5px;">
+      <img src={{ news.news_article }} class="card-img-top" alt="None">
+      <div class="card-body">
+          <h5 class="card-title">{{ news.dictionary_tokens }}</h5>
+          <p class="card-text">{{ news.news_headline }}</p>
+          <p class="card-text">Type : {{ news.entity_type_id }}</p>
+          <a href={{ news.news_article }} class="btn btn-primary" target="_blank">Full Story</a>
+      </div>
+    </div>
+{% endfor %}
+{% endblock %}
