@@ -26,6 +26,10 @@
     integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
     crossorigin="anonymous"
   ></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     <title>News Feed</title>
 </head>
 <body>
@@ -72,29 +76,20 @@
                   >All News</a
                 >
               </li>
-              <li>
-                <form action="{% url 'home' %}" method="get">
-                    <label for="featured">Format</label>
-                    <select name="featured">
-                        <option value="Tech Mahindra">Tech Mahindra</option>
-                        <option value="Infosys">Infosys</option>
-                        <option value="Accenture">Accenture</option>
-                        <option value="Wipro">Wipro</option>
-                        <option value="TCS">TCS</option>
-                        <option value="AI">AI</option>
-                    <input type="submit" name="featured" value="Filter" />
-                </form> 
-              </li>
+
             </ul>
             
   
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" action="" method="get">
               <input
                 type="search"
+                name="company"
                 class="form-control form-control-dark"
                 placeholder="Search..."
                 aria-label="Search"
+                style="display:inline;"
               />
+              <button type="submit" class="btn btn-primary" style="display:inline;" value="Search">Search</button>
             </form>
             
           </div>

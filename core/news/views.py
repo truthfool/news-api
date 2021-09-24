@@ -28,9 +28,10 @@ def API_data():
 
 def Home(request):
     
-    if request.GET.get('featured'):
-        featured_filter = request.GET.get('featured')
-        news_list=NewsModel.objects.filter(dictionary_tokens=featured_filter)
+    company=request.GET.get('company')
+
+    if company:
+        news_list=NewsModel.objects.filter(dictionary_tokens=company)
     else:
         news_list=NewsModel.objects.all()
 
