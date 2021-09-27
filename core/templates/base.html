@@ -76,23 +76,39 @@
                   >All News</a
                 >
               </li>
-
+              <li>
+                <form method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <label class="navbar-nav me-auto mb-2 mb-lg-0">Company</label>
+                  <div class="col-sm-15">
+                    <select name="id_type" class="form-control form-control-default" style="color:rgb(43, 41, 41)" required>
+                      <option value="Tech Mahindra">Tech Mahindra</option>
+                      <option value="Infosys">Infosys</option>
+                      <option value="Accenture">Accenture</option>
+                      <option value="Wipro">Wipro</option>
+                      <option value="TCS">TCS</option>
+                      <option value="Infy">Infy</option>
+                      <option value="AI">AI</option>
+                    </select>
+                    <input type="submit" value="Filter">
+                  </form>
+              </li>
             </ul>
             
-  
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" action="" method="get">
-              <input
-                type="search"
-                name="company"
-                class="form-control form-control-dark"
-                placeholder="Search..."
-                aria-label="Search"
-                style="display:inline;"
-              />
-              <button type="submit" class="btn btn-primary" style="display:inline;" value="Search">Search</button>
-            </form>
             
           </div>
+          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" action="" method="get">
+            {% csrf_token %}
+            <input
+              type="search"
+              name="search_query"
+              class="form-control form-control-dark"
+              placeholder="Search..."
+              aria-label="Search"
+              style="display:inline;"
+            />
+            <button type="submit" class="btn btn-primary" style="display:inline;" value="Search">Search</button>
+          </form>
         </div>
       </nav>
 
